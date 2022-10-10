@@ -1,0 +1,303 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+img {
+  display: block;
+}
+body {
+  color: #333;
+  font-size: 0.26rem;
+  line-height: 1.5;
+  background: #f1f1f1;
+  overflow-x: hidden;
+}
+.ad {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000;
+  color: #fff;
+  width: 100%;
+  height: 0.9rem;
+  padding: 0 0.34rem;
+  z-index: 1;
+}
+.ad .logo {
+  width: 0.6rem;
+  height: 0.6rem;
+  margin-right: 0.2rem;
+}
+.ad .title {
+  flex-grow: 1;
+}
+.ad .title h1 {
+  font-size: 0.26rem;
+  font-weight: normal;
+  color: #fff;
+  margin-top: 0.1rem;
+}
+.ad .title p {
+  font-size: 0.22rem;
+  color: #888;
+}
+.ad .download {
+  height: 0.48rem;
+  width: 1.2rem;
+}
+.nav {
+  margin-top: 0.9rem;
+  height: 0.9rem;
+  color: #fff;
+  width: 100%;
+  background-color: #db9e3f;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.nav a {
+  padding: 0 0.4rem;
+  height: 0.9rem;
+  line-height: 0.9rem;
+  text-align: center;
+}
+.nav a.active span {
+  padding-bottom: 0.05rem;
+  border-bottom: 2px solid #fff;
+}
+.banner {
+  position: relative;
+}
+.banner .slider-container {
+  width: 100%;
+  overflow-x: hidden;
+  display: flex;
+}
+.banner .slider-container .slider-item {
+  flex-shrink: 0;
+  width: 100%;
+}
+.banner .slider-container .slider-item img {
+  display: block;
+  width: 7.5rem;
+  height: 3.38rem;
+}
+.banner .dots {
+  position: absolute;
+  bottom: 0.2rem;
+  right: 0.2rem;
+  display: flex;
+  box-sizing: border-box;
+}
+.banner .dots .dots-item {
+  width: 0.2rem;
+  height: 0.2rem;
+  margin-right: 0.2rem;
+  background: #fff;
+  border-radius: 0.06rem;
+}
+.banner .dots .dots-item.active {
+  background: #888;
+}
+.menu {
+  background: #f9f9f9;
+  margin: 0.2rem 0;
+}
+.menu .menu-list {
+  background: #fff;
+  display: flex;
+  overflow: scroll;
+}
+.menu .menu-list .item {
+  margin: 0.24rem 0;
+  text-align: center;
+  border-right: 1px solid #eee;
+  width: 25%;
+}
+.menu .expand {
+  background: #f9f9f9;
+  text-align: center;
+  padding: 0.15rem;
+}
+.block-container {
+  background: #fff;
+  margin: 0.26rem 0;
+  padding: 0 0.26rem;
+}
+.block-container .block-title {
+  display: flex;
+  align-items: center;
+  padding: 0.18rem 0;
+  border-bottom: 1px solid #eee;
+}
+.block-container .block-title h2 {
+  flex-grow: 1;
+  margin-left: 0.2rem;
+  font-weight: normal;
+  font-size: 0.34rem;
+}
+.block-container .block-main .block-menu {
+  display: flex;
+  justify-content: space-between;
+}
+.block-container .block-main .block-menu .item {
+  font-size: 0.26rem;
+  margin: 0.24rem 0;
+  padding-bottom: 0.05rem;
+  padding: 0 0.2rem 0.05rem;
+}
+.block-container .block-main .block-menu .item.active {
+  color: #db9e3f;
+  border-bottom: 3px solid #db9e3f;
+}
+.block-container .slider-container {
+  overflow-x: hidden;
+  display: flex;
+  align-items: flex-start;
+  transition: 0.3s;
+}
+.block-container .slider-container .slider-item {
+  flex-shrink: 0;
+  width: 100%;
+}
+.news-list .slider-container .slider-item .item {
+  display: flex;
+  margin: 0.1rem 0;
+}
+.news-list .slider-container .slider-item .item a {
+  padding: 0 0.3rem;
+  flex-grow: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.news-list .slider-container .slider-item .item span {
+  color: #888;
+}
+.news-list .slider-container .slider-item .item.hot::before {
+  content: "热门";
+  white-space: nowrap;
+  color: #ff3636;
+  padding: 0.02rem 0.1rem;
+  border-radius: 0.05rem;
+  border: 1px solid #ff3636;
+}
+.news-list .slider-container .slider-item .item.news::before {
+  content: "新闻";
+  white-space: nowrap;
+  color: #1e96ab;
+  padding: 0.02rem 0.1rem;
+  border-radius: 0.05rem;
+  border: 1px solid #1e96ab;
+}
+.news-list .slider-container .slider-item .item.notice::before {
+  content: "公告";
+  white-space: nowrap;
+  color: #f09a37;
+  padding: 0.02rem 0.1rem;
+  border-radius: 0.05rem;
+  border: 1px solid #f09a37;
+}
+.news-list .slider-container .slider-item .item.match::before {
+  content: "赛事";
+  white-space: nowrap;
+  color: #4d9cff;
+  padding: 0.02rem 0.1rem;
+  border-radius: 0.05rem;
+  border: 1px solid #4d9cff;
+}
+.news-list .slider-container .slider-item .item.activity::before {
+  content: "活动";
+  white-space: nowrap;
+  color: #ff3636;
+  padding: 0.02rem 0.1rem;
+  border-radius: 0.05rem;
+  border: 1px solid #ff3636;
+}
+.hero-list .block-title {
+  flex-wrap: wrap;
+}
+.hero-list .block-title img {
+  width: 100%;
+  border-radius: 0.12rem;
+  margin-top: 0.12rem;
+}
+.hero-list .block-main .slider-container {
+  flex-grow: 0;
+}
+.hero-list .block-main .slider-container .slider-item {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.15rem;
+  justify-items: center;
+}
+.hero-list .block-main .slider-container .slider-item a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hero-list .block-main .slider-container .slider-item a img {
+  width: 1.172rem;
+  height: 1.172rem;
+  border-radius: 0.12rem;
+}
+.video-list {
+  margin-bottom: 0.02rem;
+}
+.video-list .block-main .block-menu {
+  justify-content: flex-start;
+}
+.video-list .block-main .block-menu .item {
+  margin-right: 0.4rem;
+}
+.video-list .block-main .slider-container .slider-item {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.15rem;
+}
+.video-list .block-main .slider-container .slider-item a {
+  display: flex;
+  flex-direction: column;
+}
+.video-list .block-main .slider-container .slider-item a img {
+  margin: 0 auto;
+  width: 3.29rem;
+  height: 1.8rem;
+}
+.video-list .block-main .slider-container .slider-item a .title {
+  margin-top: 0.05rem;
+  font-size: 0.26rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+}
+.video-list .block-main .slider-container .slider-item a .aside {
+  display: flex;
+  justify-content: space-between;
+  color: #888;
+}
+.video-list .block-main .slider-container .slider-item a .aside .left .spr {
+  vertical-align: -0.02rem;
+}
+.video-list .block-main .slider-container .slider-item a .aside .left span {
+  margin-right: 0.1rem;
+}
+.video-list .block-main .slider-container .slider-item a .aside .right {
+  margin-right: 0.1rem;
+}
+.more {
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  padding: 0.2rem 0;
+  color: #888;
+}
