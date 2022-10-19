@@ -1,0 +1,399 @@
+@gray: #888;
+@orage: #db9e3f;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+}
+
+body {
+    color: #333;
+    font-size: 0.26rem;
+    line-height: 1.5;
+    background: #f1f1f1;
+    overflow-x: hidden;
+}
+
+
+//广告
+.ad {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000;
+    color: #fff;
+    width: 100%;
+    height: 0.9rem;
+    padding: 0 0.34rem;
+    z-index: 1;
+
+    .logo {
+        width: 0.6rem;
+        height: 0.6rem;
+        margin-right: 0.2rem;
+    }
+
+    .title {
+        flex-grow: 1;
+
+        h1 {
+            font-size: 0.26rem;
+            font-weight: normal;
+            color: #fff;
+            margin-top: 0.1rem;
+        }
+
+        p {
+            font-size: 0.22rem;
+            color: @gray;
+        }
+    }
+
+    .download {
+        height: 0.48rem;
+        width: 1.2rem;
+    }
+}
+
+// 导航栏
+.nav {
+    margin-top: 0.9rem;
+    // position: absolute;
+    // top: 0.9rem;
+    // left: 0;
+    height: 0.9rem;
+    color: #fff;
+    width: 100%;
+    background-color: @orage;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    a {
+        padding: 0 0.4rem;
+        height: 0.9rem;
+        line-height: 0.9rem;
+        // font-size: 0.3rem;
+        text-align: center;
+
+        &.active span {
+            padding-bottom: 0.05rem;
+            border-bottom: 2px solid #fff;
+        }
+    }
+}
+
+
+// 轮播图
+.banner {
+    position: relative;
+
+    .slider-container {
+        width: 100%;
+        overflow-x: hidden;
+        display: flex;
+
+        .slider-item {
+            flex-shrink: 0;
+            width: 100%;
+
+            img {
+                display: block;
+                width: 7.5rem;
+                height: 3.38rem;
+            }
+        }
+    }
+
+    .dots {
+        position: absolute;
+        bottom: 0.2rem;
+        right: 0.2rem;
+        display: flex;
+        box-sizing: border-box;
+
+        .dots-item {
+            width: 0.2rem;
+            height: 0.2rem;
+            margin-right: 0.2rem;
+            background: #fff;
+            border-radius: 0.06rem;
+
+            &.active {
+                background: @gray;
+            }
+        }
+    }
+}
+
+// menu
+.menu {
+    background: #f9f9f9;
+
+    .menu-list {
+        background: #fff;
+        display: flex;
+        overflow: scroll;
+
+        .item {
+            margin: 0.24rem 0;
+            text-align: center;
+            border-right: 1px solid #eee;
+            width: 25%;
+        }
+    }
+
+    .expand {
+        background: #f9f9f9;
+        text-align: center;
+        padding: 0.15rem;
+    }
+
+    margin: 0.2rem 0;
+}
+
+// 公共样式
+.block-container {
+    background: #fff;
+    margin: 0.26rem 0;
+    padding: 0 0.26rem;
+
+    .block-title {
+        display: flex;
+        align-items: center;
+
+        h2 {
+            flex-grow: 1;
+            margin-left: 0.2rem;
+            font-weight: normal;
+            font-size: 0.34rem;
+        }
+
+        padding: 0.18rem 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    .block-main {
+        .block-menu {
+            display: flex;
+            justify-content: space-between;
+
+            .item {
+                font-size: 0.26rem;
+                margin: 0.24rem 0;
+                padding-bottom: 0.05rem;
+                padding: 0 0.2rem 0.05rem;
+
+                &.active {
+                    color: @orage;
+                    border-bottom: 3px solid @orage;
+                }
+            }
+        }
+    }
+
+    .slider-container {
+        overflow-x: hidden;
+        display: flex;
+        align-items: flex-start;
+        transition: 0.3s;
+
+        .slider-item {
+            flex-shrink: 0;
+            width: 100%;
+        }
+    }
+}
+
+// news-list
+.news-list {
+    .slider-container {
+        .slider-item {
+            .item {
+                display: flex;
+                margin: 0.1rem 0;
+
+                a {
+                    padding: 0 0.3rem;
+                    flex-grow: 1;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+
+                span {
+                    color: #888;
+                }
+
+                &.hot::before {
+                    content: "热门";
+                    white-space: nowrap;
+                    color: #ff3636;
+                    padding: 0.02rem 0.1rem;
+                    border-radius: 0.05rem;
+                    border: 1px solid #ff3636;
+                }
+
+                &.news::before {
+                    content: "新闻";
+                    white-space: nowrap;
+                    color: #1e96ab;
+                    padding: 0.02rem 0.1rem;
+                    border-radius: 0.05rem;
+                    border: 1px solid #1e96ab;
+                }
+
+                &.notice::before {
+                    content: "公告";
+                    white-space: nowrap;
+                    color: #f09a37;
+                    padding: 0.02rem 0.1rem;
+                    border-radius: 0.05rem;
+                    border: 1px solid #f09a37;
+                }
+
+                &.match::before {
+                    content: "赛事";
+                    white-space: nowrap;
+                    color: #4d9cff;
+                    padding: 0.02rem 0.1rem;
+                    border-radius: 0.05rem;
+                    border: 1px solid #4d9cff;
+                }
+
+                &.activity::before {
+                    content: "活动";
+                    white-space: nowrap;
+                    color: #ff3636;
+                    padding: 0.02rem 0.1rem;
+                    border-radius: 0.05rem;
+                    border: 1px solid #ff3636;
+                }
+            }
+        }
+    }
+}
+
+
+// hero-list
+.hero-list {
+    .block-title {
+        flex-wrap: wrap;
+
+        img {
+            width: 100%;
+            // height: 100%;
+            border-radius: 0.12rem;
+            margin-top: 0.12rem;
+        }
+
+
+    }
+
+    .block-main {
+        .slider-container {
+            flex-grow: 0;
+
+            .slider-item {
+                display: grid;
+                grid-template-columns: repeat(5, 1fr);
+                gap: 0.15rem;
+                justify-items: center;
+
+                a {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    img {
+                        width: 1.172rem;
+                        height: 1.172rem;
+                        border-radius: 0.12rem;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+
+// video-list
+.video-list {
+    margin-bottom: 0.02rem;
+    .block-main {
+        .block-menu {
+            justify-content: flex-start;
+
+            .item {
+                margin-right: 0.4rem;
+            }
+        }
+
+        .slider-container {
+            .slider-item {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.15rem;
+
+                a {
+                    display: flex;
+                    flex-direction: column;
+                    img {
+                        margin: 0 auto;
+                        width: 3.29rem;
+                        height: 1.8rem;
+                    }
+
+                    .title {
+                        margin-top: 0.05rem;
+                        font-size: 0.26rem;
+                        display: -webkit-box;
+                        -webkit-box-orient: vertical;
+                        overflow: hidden;
+                        -webkit-line-clamp: 2; // 最大的行数
+                    }
+                    .aside{
+                        display: flex;
+                        justify-content: space-between;
+                        color: @gray;
+                        .left{
+                            .spr{
+                                vertical-align: -0.02rem;
+                            }
+                            span{
+                                margin-right: 0.1rem;
+                            }
+                        }
+                        .right{
+                            margin-right: 0.1rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 加载更多
+.more{
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    padding: 0.2rem 0;
+    color: @gray;
+}
